@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(movie LANGUAGES CXX)
+project(emerson LANGUAGES CXX)
 
-set(BINARY_NAME "movie")
+set(BINARY_NAME "emerson")
 
 cmake_policy(SET CMP0063 NEW)
 
