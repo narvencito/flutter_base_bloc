@@ -1,4 +1,4 @@
-// ignore_for_file: invalid_use_of_visible_for_testing_member,
+// ignore_for_file: invalid_use_of_visible_for_testing_member,directives_ordering, lines_longer_than_80_chars
 //unnecessary_type_check, sort_constructors_first
 
 import 'dart:io';
@@ -7,10 +7,10 @@ import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
-import 'package:movie/app/app.dart';
-import 'package:movie/app/modules/movie/model/movie_response_model.dart';
-import 'package:movie/app/modules/movie/model/movie_response_model2.dart';
-import 'package:movie/app/modules/movie/repository/i_movie_repository.dart';
+import 'package:emerson/app/app.dart';
+import 'package:emerson/app/modules/movie/model/movie_response_model.dart';
+import 'package:emerson/app/modules/movie/model/movie_response_model2.dart';
+import 'package:emerson/app/modules/movie/repository/i_movie_repository.dart';
 
 part 'movie_event.dart';
 part 'movie_state.dart';

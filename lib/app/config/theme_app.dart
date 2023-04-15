@@ -1,6 +1,8 @@
+// ignore_for_file: directives_ordering
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:movie/utils/constans.dart';
+import 'package:emerson/utils/constans.dart';
 
 class ThemeApp {
   final light = ThemeData(

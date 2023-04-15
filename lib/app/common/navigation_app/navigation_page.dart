@@ -1,11 +1,12 @@
 // ignore_for_file: must_be_immutable, lines_longer_than_80_chars, unnecessary_lambdas, cascade_invocations
 
+import 'package:emerson/app/common/navigation_app/app_tab_bar.dart';
+import 'package:emerson/app/modules/duoling_page.dart';
+import 'package:emerson/app/modules/movie/page/movie_page.dart';
+import 'package:emerson/app/modules/user/page/profile_page.dart';
+import 'package:emerson/utils/constans.dart';
+
 import 'package:flutter/material.dart';
-import 'package:movie/app/common/navigation_app/app_tab_bar.dart';
-import 'package:movie/app/modules/duoling_page.dart';
-import 'package:movie/app/modules/movie/page/movie_page.dart';
-import 'package:movie/app/modules/user/page/profile_page.dart';
-import 'package:movie/utils/constans.dart';
 
 class NavigationPage extends StatefulWidget {
   NavigationPage({super.key, this.selectedIndex});

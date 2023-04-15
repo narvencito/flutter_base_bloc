@@ -1,12 +1,12 @@
-// ignore_for_file: lines_longer_than_80_chars, inference_failure_on_function_invocation
+// ignore_for_file: lines_longer_than_80_chars, inference_failure_on_function_invocation, directives_ordering
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:movie/app/common/widgets/custom_painter.dart';
-import 'package:movie/app/config/routes_app.dart';
-import 'package:movie/app/modules/user/bloc/user_bloc.dart';
-import 'package:movie/utils/constans.dart';
+import 'package:emerson/app/common/widgets/custom_painter.dart';
+import 'package:emerson/app/config/routes_app.dart';
+import 'package:emerson/app/modules/user/bloc/user_bloc.dart';
+import 'package:emerson/utils/constans.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});

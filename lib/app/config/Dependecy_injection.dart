@@ -1,14 +1,14 @@
 // ignore_for_file: lines_longer_than_80_chars, file_names, cascade_invocations
 
 import 'package:dio/dio.dart';
-import 'package:movie/app/app.dart';
-import 'package:movie/app/config/flavor_config.dart';
-import 'package:movie/app/modules/movie/repository/i_movie_repository.dart';
-import 'package:movie/app/modules/movie/repository/movie_repository_impl.dart';
-import 'package:movie/app/modules/movie/service/movie_service.dart';
-import 'package:movie/app/modules/user/repository/i_user_repository.dart';
-import 'package:movie/app/modules/user/repository/user_repository_impl.dart';
-import 'package:movie/app/modules/user/service/user_service.dart';
+import 'package:emerson/app/app.dart';
+import 'package:emerson/app/config/flavor_config.dart';
+import 'package:emerson/app/modules/movie/repository/i_movie_repository.dart';
+import 'package:emerson/app/modules/movie/repository/movie_repository_impl.dart';
+import 'package:emerson/app/modules/movie/service/movie_service.dart';
+import 'package:emerson/app/modules/user/repository/i_user_repository.dart';
+import 'package:emerson/app/modules/user/repository/user_repository_impl.dart';
+import 'package:emerson/app/modules/user/service/user_service.dart';
 import 'package:talker_dio_logger/talker_dio_logger.dart';
 
 class DependencyInjection {

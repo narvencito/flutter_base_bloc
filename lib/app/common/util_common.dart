@@ -1,7 +1,9 @@
-// ignore_for_file: inference_failure_on_function_invocation, eol_at_end_of_file
+// ignore_for_file: inference_failure_on_function_invocation,directives_ordering
+// eol_at_end_of_file,
+// directives_ordering
 
 import 'package:flutter/material.dart';
-import 'package:movie/app/common/widgets/alert_confirm.dart';
+import 'package:emerson/app/common/widgets/alert_confirm.dart';
 
 class UtilCommon {
   static void openConfirmDialog(

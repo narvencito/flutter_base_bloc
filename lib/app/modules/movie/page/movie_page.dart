@@ -1,15 +1,15 @@
-// ignore_for_file: prefer_final_locals, omit_local_variable_types, lines_longer_than_80_chars, inference_failure_on_instance_creation, inference_failure_on_function_return_type, always_declare_return_types
+// ignore_for_file: prefer_final_locals, omit_local_variable_types, lines_longer_than_80_chars, inference_failure_on_instance_creation, inference_failure_on_function_return_type, always_declare_return_types, directives_ordering
 
 import 'dart:ui' as ui;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movie/app/config/flavor_config.dart';
-import 'package:movie/app/config/routes_app.dart';
-import 'package:movie/app/modules/movie/bloc/movie_bloc.dart';
-import 'package:movie/app/modules/movie/model/movie_response_model2.dart';
-import 'package:movie/app/modules/movie/widgets/dot_indicator.dart';
-import 'package:movie/utils/constans.dart';
+import 'package:emerson/app/config/flavor_config.dart';
+import 'package:emerson/app/config/routes_app.dart';
+import 'package:emerson/app/modules/movie/bloc/movie_bloc.dart';
+import 'package:emerson/app/modules/movie/model/movie_response_model2.dart';
+import 'package:emerson/app/modules/movie/widgets/dot_indicator.dart';
+import 'package:emerson/utils/constans.dart';
 
 class MoviePage extends StatefulWidget {
   const MoviePage({super.key});

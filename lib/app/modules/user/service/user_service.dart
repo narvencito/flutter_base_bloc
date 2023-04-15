@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:movie/app/app.dart';
+import 'package:emerson/app/app.dart';
 
 class UserService {
   final dio = getItApp.get<Dio>();

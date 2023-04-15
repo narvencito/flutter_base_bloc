@@ -1,7 +1,7 @@
-// ignore_for_file: cascade_invocations, lines_longer_than_80_chars
+// ignore_for_file: cascade_invocations, lines_longer_than_80_chars, directives_ordering
 
 import 'package:flutter/material.dart';
-import 'package:movie/app/common/navigation_app/navigation_page.dart';
+import 'package:emerson/app/common/navigation_app/navigation_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

@@ -1,17 +1,13 @@
-// ignore_for_file: lines_longer_than_80_chars, strict_raw_type
+// ignore_for_file: lines_longer_than_80_chars, strict_raw_type, directives_ordering
 
 import 'package:flutter/material.dart';
-import 'package:movie/app/modules/duoling_page.dart';
-import 'package:movie/app/modules/home/page/home_page.dart';
-import 'package:movie/app/modules/movie/model/movie_response_model2.dart';
-import 'package:movie/app/modules/movie/page/movie_page.dart';
-import 'package:movie/app/modules/movie_detail/page/movie_detail_page.dart';
-import 'package:movie/app/modules/splash/page/splash_page.dart';
-import 'package:movie/app/modules/user/page/login_page.dart';
-// import 'package:page_animation_transition/animations/fade_animation_transition.dart';
-// import 'package:page_animation_transition/animations/right_to_left_faded_transition.dart';
-// import 'package:page_animation_transition/page_animation_transition.dart';
-// import 'package:transition/transition.dart';
+import 'package:emerson/app/modules/duoling_page.dart';
+import 'package:emerson/app/modules/home/page/home_page.dart';
+import 'package:emerson/app/modules/movie/model/movie_response_model2.dart';
+import 'package:emerson/app/modules/movie/page/movie_page.dart';
+import 'package:emerson/app/modules/movie_detail/page/movie_detail_page.dart';
+import 'package:emerson/app/modules/splash/page/splash_page.dart';
+import 'package:emerson/app/modules/user/page/login_page.dart';
 
 class RoutesApp {
   static const splash = '/';

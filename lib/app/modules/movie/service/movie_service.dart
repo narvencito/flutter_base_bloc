@@ -1,9 +1,9 @@
 // ignore_for_file: omit_local_variable_types, prefer_final_locals, lines_longer_than_80_chars, avoid_dynamic_calls, inference_failure_on_function_invocation
 
 import 'package:dio/dio.dart';
-import 'package:movie/app/app.dart';
-import 'package:movie/app/common/model/api_response_model.dart';
-import 'package:movie/app/modules/movie/model/movie_response_model2.dart';
+import 'package:emerson/app/app.dart';
+import 'package:emerson/app/common/model/api_response_model.dart';
+import 'package:emerson/app/modules/movie/model/movie_response_model2.dart';
 
 class MovieService {
   final dio = getItApp.get<Dio>();

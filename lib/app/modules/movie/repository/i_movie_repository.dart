@@ -1,4 +1,4 @@
-import 'package:movie/app/common/model/api_response_model.dart';
+import 'package:emerson/app/common/model/api_response_model.dart';
 
 abstract class IMovieRepository {
   Future<APIResponseModel?> getMovies();

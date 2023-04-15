@@ -49,7 +49,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.custom.org.movie"
+        applicationId "com.emerson.navarro"
         minSdkVersion flutter.minSdkVersion
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
@@ -79,20 +79,20 @@ android {
         production {
             dimension "default"
             applicationIdSuffix ""
-            manifestPlaceholders = [appName: "Movie"]
-            resValue "string", "app_name", "MovieApp"
+            manifestPlaceholders = [appName: "EmersonN"]
+            resValue "string", "app_name", "EmersonNApp"
         }
         staging {
             dimension "default"
             applicationIdSuffix ".stg"
-            manifestPlaceholders = [appName: "[STG] Movie"]
-            resValue "string", "app_name", "MovieApp dev"
+            manifestPlaceholders = [appName: "[STG] EmersonN"]
+            resValue "string", "app_name", "EmersonNApp dev"
         }
         development {
             dimension "default"
             applicationIdSuffix ".dev"
-            manifestPlaceholders = [appName: "[DEV] Movie"]
-            resValue "string", "app_name", "MovieApp stg"
+            manifestPlaceholders = [appName: "[DEV] EmersonN"]
+            resValue "string", "app_name", "EmersonNApp stg"
         }
     }
 

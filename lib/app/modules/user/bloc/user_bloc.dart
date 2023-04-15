@@ -1,9 +1,9 @@
-// ignore_for_file: lines_longer_than_80_chars, sort_constructors_first
+// ignore_for_file: lines_longer_than_80_chars, sort_constructors_first, directives_ordering
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:movie/app/app.dart';
-import 'package:movie/app/modules/user/repository/i_user_repository.dart';
+import 'package:emerson/app/app.dart';
+import 'package:emerson/app/modules/user/repository/i_user_repository.dart';
 
 part 'user_event.dart';
 part 'user_state.dart';

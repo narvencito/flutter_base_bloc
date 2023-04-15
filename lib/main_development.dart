@@ -1,7 +1,7 @@
-import 'package:movie/app/app.dart';
-import 'package:movie/app/config/Dependecy_injection.dart';
-import 'package:movie/app/config/flavor_config.dart';
-import 'package:movie/bootstrap.dart';
+import 'package:emerson/app/app.dart';
+import 'package:emerson/app/config/Dependecy_injection.dart';
+import 'package:emerson/app/config/flavor_config.dart';
+import 'package:emerson/bootstrap.dart';
 
 void main() {
   InitFlavorConfig.appFlavor = Flavor.DEV;

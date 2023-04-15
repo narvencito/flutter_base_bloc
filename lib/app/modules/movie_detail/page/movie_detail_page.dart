@@ -1,8 +1,8 @@
-// ignore_for_file: must_be_immutable, lines_longer_than_80_chars
+// ignore_for_file: must_be_immutable, lines_longer_than_80_chars, directives_ordering
 
 import 'package:flutter/material.dart';
-import 'package:movie/app/config/flavor_config.dart';
-import 'package:movie/app/modules/movie/model/movie_response_model2.dart';
+import 'package:emerson/app/config/flavor_config.dart';
+import 'package:emerson/app/modules/movie/model/movie_response_model2.dart';
 
 class MovieDetailPage extends StatelessWidget {
   MovieDetailPage({super.key, required this.movie});

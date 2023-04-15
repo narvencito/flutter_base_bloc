@@ -1,6 +1,6 @@
-// ignore_for_file: cascade_invocations, lines_longer_than_80_chars
+// ignore_for_file: cascade_invocations, lines_longer_than_80_chars, directives_ordering
 import 'package:flutter/material.dart';
-import 'package:movie/utils/constans.dart';
+import 'package:emerson/utils/constans.dart';
 
 class CurvedPainterTopRigth extends CustomPainter {
   @override

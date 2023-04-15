@@ -1,4 +1,4 @@
-package com.custom.org.movie
+package com.emerson.navarro
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -1,10 +1,10 @@
-// ignore_for_file: use_super_parameters, lines_longer_than_80_chars, strict_raw_type
+// ignore_for_file: use_super_parameters, lines_longer_than_80_chars, strict_raw_type, directives_ordering
 
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:movie/app/config/routes_app.dart';
-import 'package:movie/utils/constans.dart';
-// import 'package:movie/utils/constans.dart';
+import 'package:emerson/app/config/routes_app.dart';
+import 'package:emerson/utils/constans.dart';
+// import 'package:emerson/utils/constans.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
