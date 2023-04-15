@@ -1,8 +1,11 @@
-// ignore_for_file: lines_longer_than_80_chars
+// ignore_for_file: lines_longer_than_80_chars, strict_raw_type
 
 import 'package:flutter/material.dart';
+import 'package:movie/app/modules/duoling_page.dart';
 import 'package:movie/app/modules/home/page/home_page.dart';
+import 'package:movie/app/modules/movie/model/movie_response_model2.dart';
 import 'package:movie/app/modules/movie/page/movie_page.dart';
+import 'package:movie/app/modules/movie_detail/page/movie_detail_page.dart';
 import 'package:movie/app/modules/splash/page/splash_page.dart';
 import 'package:movie/app/modules/user/page/login_page.dart';
 // import 'package:page_animation_transition/animations/fade_animation_transition.dart';
@@ -16,6 +19,7 @@ class RoutesApp {
   static const home = '/home';
   static const movie = '/movie';
   static const movieDetail = '/movie-detail';
+  static const duolingo = '/duolingo';
 
   static Route routes(RouteSettings settings) {
     final args = settings.arguments;
@@ -29,16 +33,18 @@ class RoutesApp {
           transitionDuration: const Duration(milliseconds: 1000),
           transitionsBuilder: (_, a, __, c) => FadeTransition(opacity: a, child: c),
         );
-      // return Transition(child: LoginPage(), transitionEffect: TransitionEffect.LEFT_TO_RIGHT);
-      // return PageAnimationTransition(page: LoginPage(), pageAnimationType: RightToLeftFadedTransition());
-      // return MaterialPageRoute(builder: (context) => LoginPage());
       case home:
         return MaterialPageRoute(builder: (context) => const HomePage());
       case movie:
         return MaterialPageRoute(builder: MoviePage.create);
-      //case newsDetails:
-      //  return MaterialPageRoute(
-      //      builder: (_) => NewsDetailScreen.create(args!));
+      case movieDetail:
+        return MaterialPageRoute(
+          builder: (_) => MovieDetailPage(
+            movie: args! as Results,
+          ),
+        );
+      case duolingo:
+        return MaterialPageRoute(builder: (context) => const DuolingoPage());
     }
     throw Exception('This route does not exists');
   }

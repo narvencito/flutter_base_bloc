@@ -1,7 +1,10 @@
 // ignore_for_file: invalid_use_of_visible_for_testing_member,
 //unnecessary_type_check, sort_constructors_first
 
+import 'dart:io';
+
 import 'package:bloc/bloc.dart';
+import 'package:dio/dio.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 import 'package:movie/app/app.dart';
@@ -26,9 +29,10 @@ class MovieBloc extends Bloc<MovieEvent, MovieState> {
       emit(const MovieLoadingState());
       final response = await _movieRepository.getMovies();
       emit(MovieLoadCompleteState(response!.data as MovieResponseModel2));
-    } on Exception catch (e) {
-      if (kDebugMode) {
-        print(e);
+    } on DioError catch (e) {
+      //emit(const MovieErrorState('Error al obtener las peliculas'));
+      if (e.error is SocketException) {
+        emit(const MovieErrorState('No tiene acceso a Internet'));
       }
     }
   }

@@ -6,6 +6,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:movie/app/common/widgets/custom_painter.dart';
 import 'package:movie/app/config/routes_app.dart';
 import 'package:movie/app/modules/user/bloc/user_bloc.dart';
+import 'package:movie/utils/constans.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -130,7 +131,7 @@ class LoginPage extends StatelessWidget {
                               children: [
                                 const Text(
                                   'OR',
-                                  style: TextStyle(color: Color.fromARGB(255, 58, 78, 207), fontWeight: FontWeight.w700),
+                                  style: TextStyle(color: ConstantsApp.primaryColor, fontWeight: FontWeight.w700),
                                 ),
                                 const Text(
                                   'Login with social media',
@@ -158,7 +159,7 @@ class LoginPage extends StatelessWidget {
                               Text(
                                 ' Signup',
                                 style: TextStyle(
-                                  color: Color.fromARGB(255, 58, 78, 207),
+                                  color: ConstantsApp.primaryColor,
                                   decoration: TextDecoration.underline,
                                 ),
                               ),

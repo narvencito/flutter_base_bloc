@@ -1,11 +1,12 @@
 // ignore_for_file: cascade_invocations, lines_longer_than_80_chars
 import 'package:flutter/material.dart';
+import 'package:movie/utils/constans.dart';
 
 class CurvedPainterTopRigth extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = const Color.fromARGB(255, 58, 78, 207)
+      ..color = ConstantsApp.primaryColor
       ..style = PaintingStyle.fill
       ..strokeWidth = 3;
 

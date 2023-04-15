@@ -5,9 +5,11 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie/app/config/flavor_config.dart';
+import 'package:movie/app/config/routes_app.dart';
 import 'package:movie/app/modules/movie/bloc/movie_bloc.dart';
 import 'package:movie/app/modules/movie/model/movie_response_model2.dart';
 import 'package:movie/app/modules/movie/widgets/dot_indicator.dart';
+import 'package:movie/utils/constans.dart';
 
 class MoviePage extends StatefulWidget {
   const MoviePage({super.key});
@@ -58,6 +60,7 @@ class _MoviePageState extends State<MoviePage> with SingleTickerProviderStateMix
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          toolbarHeight: 30,
           leading: Container(),
           bottom: TabBar(
             controller: tabController,
@@ -77,7 +80,11 @@ class _MoviePageState extends State<MoviePage> with SingleTickerProviderStateMix
             BlocBuilder<MovieBloc, MovieState>(
               builder: (context, state) {
                 if (state is MovieLoadingState) {
-                  return const Center(child: CircularProgressIndicator());
+                  return const Center(
+                    child: CircularProgressIndicator(
+                      color: ConstantsApp.primaryColor,
+                    ),
+                  );
                 }
                 if (state is MovieLoadCompleteState) {
                   return SizedBox(
@@ -119,20 +126,22 @@ class _MoviePageState extends State<MoviePage> with SingleTickerProviderStateMix
                                   scale: (isScrolling && isFirstPage) ? 1.0 - progress : scale,
                                   child: GestureDetector(
                                     onTap: () {
-                                      _showMovieDetails.value = !_showMovieDetails.value;
-                                      const transitionDuration = Duration(milliseconds: 550);
-                                      Navigator.of(context).push(
-                                        PageRouteBuilder(
-                                          transitionDuration: transitionDuration,
-                                          reverseTransitionDuration: transitionDuration,
-                                          pageBuilder: (_, animation, ___) {
-                                            return FadeTransition(opacity: animation, child: const Text('data'));
-                                          },
-                                        ),
-                                      );
-                                      Future.delayed(transitionDuration, () {
-                                        _showMovieDetails.value = !_showMovieDetails.value;
-                                      });
+                                      // _showMovieDetails.value = !_showMovieDetails.value;
+                                      // const transitionDuration = Duration(milliseconds: 550);
+                                      // Navigator.of(context).push(
+                                      //   PageRouteBuilder(
+                                      //     transitionDuration: transitionDuration,
+                                      //     reverseTransitionDuration: transitionDuration,
+                                      //     pageBuilder: (_, animation, ___) {
+                                      //       return FadeTransition(opacity: animation, child: MovieDetailPage(movie: movie));
+                                      //     },
+                                      //   ),
+                                      // );
+                                      // Future.delayed(transitionDuration, () {
+                                      //   _showMovieDetails.value = !_showMovieDetails.value;
+                                      // });
+
+                                      Navigator.pushNamed(context, RoutesApp.movieDetail, arguments: movie);
                                     },
                                     child: Container(
                                       margin: const EdgeInsets.only(bottom: 50),
@@ -159,7 +168,7 @@ class _MoviePageState extends State<MoviePage> with SingleTickerProviderStateMix
                                             ],
                                             image: DecorationImage(
                                               image: NetworkImage(InitFlavorConfig.imageUrl + movie.posterPath!),
-                                              fit: BoxFit.cover,
+                                              fit: BoxFit.fill,
                                             ),
                                           ),
                                         ),
@@ -196,7 +205,7 @@ class _MoviePageState extends State<MoviePage> with SingleTickerProviderStateMix
                                           child: Material(
                                             type: MaterialType.transparency,
                                             child: Text(
-                                              movie.title!.toUpperCase(),
+                                              movie.originalTitle!.toUpperCase(),
                                               //style: AppTextStyles.movieNameTextStyle,
                                             ),
                                           ),
@@ -207,7 +216,7 @@ class _MoviePageState extends State<MoviePage> with SingleTickerProviderStateMix
                                             return Visibility(
                                               visible: value,
                                               child: Text(
-                                                movie.originalTitle!,
+                                                movie.releaseDate!,
                                                 //style: AppTextStyles.movieDetails,
                                               ),
                                             );
@@ -227,7 +236,7 @@ class _MoviePageState extends State<MoviePage> with SingleTickerProviderStateMix
                 }
 
                 if (state is MovieErrorState) {
-                  return const Center(child: Text('error'));
+                  return Center(child: Text(state.message));
                 }
 
                 return Container();

@@ -3,6 +3,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:movie/app/config/routes_app.dart';
+import 'package:movie/utils/constans.dart';
 // import 'package:movie/utils/constans.dart';
 
 class SplashPage extends StatefulWidget {
@@ -14,7 +15,7 @@ class SplashPage extends StatefulWidget {
 
 class _SplashPageState extends State<SplashPage> {
   final colorizeColors = const [
-    Colors.white,
+    ConstantsApp.primaryColor,
     Colors.blue,
     Colors.yellow,
     Colors.red,
@@ -42,15 +43,18 @@ class _SplashPageState extends State<SplashPage> {
     return SafeArea(
       child: Scaffold(
         body: Center(
-          child: AnimatedTextKit(
-            pause: const Duration(microseconds: 100),
-            animatedTexts: [
-              ColorizeAnimatedText(
-                'Emerson Navarro',
-                textStyle: colorizeTextStyle,
-                colors: colorizeColors,
-              ),
-            ],
+          child: FittedBox(
+            fit: BoxFit.fitWidth,
+            child: AnimatedTextKit(
+              pause: const Duration(microseconds: 100),
+              animatedTexts: [
+                ColorizeAnimatedText(
+                  'Emerson Navarro',
+                  textStyle: colorizeTextStyle,
+                  colors: colorizeColors,
+                ),
+              ],
+            ),
           ),
         ),
       ),

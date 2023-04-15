@@ -2,8 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:movie/app/common/navigation_app/app_tab_bar.dart';
+import 'package:movie/app/modules/duoling_page.dart';
 import 'package:movie/app/modules/movie/page/movie_page.dart';
 import 'package:movie/app/modules/user/page/profile_page.dart';
+import 'package:movie/utils/constans.dart';
 
 class NavigationPage extends StatefulWidget {
   NavigationPage({super.key, this.selectedIndex});
@@ -24,7 +26,7 @@ class NavigationPageState extends State<NavigationPage> {
   @override
   void initState() {
     super.initState();
-    screens.add(MoviePage.create(context));
+    screens.add(const DuolingoPage());
     screens.add(MoviePage.create(context));
     screens.add(const ProfilePage());
   }
@@ -58,7 +60,7 @@ class NavigationPageState extends State<NavigationPage> {
         ),
         bottomNavigationBar: AppTapBar(
           key: tapbarKey,
-          selectedColor: const Color(0xff004A92),
+          selectedColor: ConstantsApp.primaryColor,
           //backGroundColor: Colors.white,
           // initialIndex: navigationController.selectedIndex.value,
           initialIndex: currentIndex,
@@ -69,7 +71,7 @@ class NavigationPageState extends State<NavigationPage> {
           items: [
             ItemTapBar(
               iconData: Icons.home,
-              label: 'Inicio',
+              label: 'Duolingo',
             ),
             ItemTapBar(
               iconData: Icons.movie,
@@ -77,7 +79,7 @@ class NavigationPageState extends State<NavigationPage> {
             ),
             ItemTapBar(
               iconData: Icons.person,
-              label: 'Infobeca',
+              label: 'profile',
             ),
           ],
         ),

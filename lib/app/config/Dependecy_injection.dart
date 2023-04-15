@@ -17,7 +17,7 @@ class DependencyInjection {
       BaseOptions(
         baseUrl: InitFlavorConfig.urlApp,
         contentType: 'application/json',
-        queryParameters: {'api_key': '5927f7059d649ac95ab1e3196f25ec1c'},
+        queryParameters: {'api_key': '5927f7059d649ac95ab1e3196f25ec1c', 'language': 'es'},
         headers: {
           'Authorization':
               'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1OTI3ZjcwNTlkNjQ5YWM5NWFiMWUzMTk2ZjI1ZWMxYyIsInN1YiI6IjY0MzM3MGFlNDUzOWQwMDA3NzdkY2Y4MiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.L1JQer6r24sNHK8fZnYDOWE-fEwagpO-KPIKIRiWOIk',

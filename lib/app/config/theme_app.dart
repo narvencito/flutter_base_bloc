@@ -20,7 +20,7 @@ class ThemeApp {
     ),
     useMaterial3: false,
     visualDensity: VisualDensity.adaptivePlatformDensity,
-    primaryColor: const Color.fromARGB(255, 34, 125, 209),
+    primaryColor: ConstantsApp.primaryColor,
     fontFamily: 'OpenSans',
     brightness: Brightness.light,
     textTheme: const TextTheme(),

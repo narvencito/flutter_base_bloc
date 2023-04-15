@@ -36,3 +36,20 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   generate: true
+
+  assets:
+  #appBar
+  - assets/images/appBar/crown_stroke.png
+  - assets/images/appBar/flag.png
+  - assets/images/appBar/navbar_diamont.png
+  - assets/images/appBar/navbar_fire.png
+  #duolingo_page
+  - assets/images/lesson_egg.png
+  - assets/images/lesson_airplane.png
+  - assets/images/store_item_8.png
+  - assets/images/lesson_hamburger.png
+  - assets/images/lesson_baby.png
+  - assets/images/lesson_dialog.png
+  - assets/images/lesson_divisor_castle.png
+
+  

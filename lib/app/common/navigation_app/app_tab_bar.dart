@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_initializing_formals, use_key_in_widget_constructors, must_be_immutable, lines_longer_than_80_chars, cascade_invocations, strict_raw_type
 import 'package:flutter/material.dart';
+import 'package:movie/utils/constans.dart';
 
 const double _movement = 18;
 
@@ -122,7 +123,7 @@ class ItemTapBar extends StatefulWidget {
     bool isSelected = false,
     required IconData iconData,
     required String label,
-    Color selectedColor = const Color(0xff004A92),
+    Color selectedColor = ConstantsApp.primaryColor,
   }) {
     this.isSelected = isSelected;
     this.iconData = iconData;
