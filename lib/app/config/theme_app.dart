@@ -1,5 +1,6 @@
 // ignore_for_file: directives_ordering
 
+import 'package:emerson/utils/methods.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:emerson/utils/constans.dart';
@@ -27,7 +28,7 @@ class ThemeApp {
     brightness: Brightness.light,
     textTheme: const TextTheme(),
     colorScheme: ColorScheme.fromSwatch(
-      primarySwatch: Colors.green,
+      primarySwatch: MaterialColorGenerator.from(ConstantsApp.primaryColor),
     ).copyWith(secondary: const Color.fromARGB(255, 34, 125, 209)).copyWith(
           background: const Color.fromARGB(255, 34, 125, 209),
         ),

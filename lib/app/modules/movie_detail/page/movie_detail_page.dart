@@ -1,5 +1,6 @@
 // ignore_for_file: must_be_immutable, lines_longer_than_80_chars, directives_ordering
 
+import 'package:emerson/utils/constans.dart';
 import 'package:flutter/material.dart';
 import 'package:emerson/app/config/flavor_config.dart';
 import 'package:emerson/app/modules/movie/model/movie_response_model2.dart';
@@ -19,23 +20,39 @@ class MovieDetailPage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.5,
-                    width: MediaQuery.of(context).size.width,
-                    child: AnimatedContainer(
-                      duration: const Duration(milliseconds: 100),
-                      curve: Curves.easeInOut,
-                      decoration: BoxDecoration(
-                        borderRadius: const BorderRadius.only(
-                          bottomLeft: Radius.circular(70),
-                          bottomRight: Radius.circular(70),
-                        ),
-                        image: DecorationImage(
-                          image: NetworkImage(InitFlavorConfig.imageUrl + movie.posterPath!),
-                          fit: BoxFit.fill,
+                  Stack(
+                    children: [
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.6,
+                        width: MediaQuery.of(context).size.width,
+                        child: AnimatedContainer(
+                          duration: const Duration(milliseconds: 100),
+                          curve: Curves.easeInOut,
+                          decoration: BoxDecoration(
+                            borderRadius: const BorderRadius.only(
+                              bottomLeft: Radius.circular(30),
+                              bottomRight: Radius.circular(30),
+                            ),
+                            image: DecorationImage(
+                              image: NetworkImage(InitFlavorConfig.imageUrl + movie.posterPath!),
+                              fit: BoxFit.fill,
+                            ),
+                          ),
                         ),
                       ),
-                    ),
+                      Padding(
+                        padding: const EdgeInsets.all(10),
+                        child: IconButton(
+                          icon: const Icon(
+                            Icons.arrow_back_ios,
+                            color: ConstantsApp.primaryColor,
+                          ),
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                        ),
+                      )
+                    ],
                   ),
                   Expanded(
                     child: SingleChildScrollView(

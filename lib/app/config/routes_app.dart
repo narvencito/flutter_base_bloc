@@ -1,5 +1,6 @@
 // ignore_for_file: lines_longer_than_80_chars, strict_raw_type, directives_ordering
 
+import 'package:emerson/app/modules/anged/page/anged_page.dart';
 import 'package:flutter/material.dart';
 import 'package:emerson/app/modules/duoling_page.dart';
 import 'package:emerson/app/modules/home/page/home_page.dart';
@@ -16,6 +17,7 @@ class RoutesApp {
   static const movie = '/movie';
   static const movieDetail = '/movie-detail';
   static const duolingo = '/duolingo';
+  static const anged = '/anged'; //ahorcado
 
   static Route routes(RouteSettings settings) {
     final args = settings.arguments;
@@ -41,6 +43,8 @@ class RoutesApp {
         );
       case duolingo:
         return MaterialPageRoute(builder: (context) => const DuolingoPage());
+      case anged:
+        return MaterialPageRoute(builder: (context) => const AngedPage());
     }
     throw Exception('This route does not exists');
   }

@@ -53,6 +53,7 @@ class Results {
     this.voteCount,
     this.video,
     this.voteAverage,
+    this.favorite,
   });
   String? posterPath;
   bool? adult;
@@ -68,6 +69,7 @@ class Results {
   int? voteCount;
   bool? video;
   double? voteAverage;
+  bool? favorite;
 
   Results.fromJson(Map<String, dynamic> json) {
     posterPath = json['poster_path'] as String;
@@ -84,6 +86,7 @@ class Results {
     voteCount = json['vote_count'] as int;
     video = json['video'] as bool;
     voteAverage = double.parse(json['vote_average'].toString());
+    favorite = false;
   }
 
   Map<String, dynamic> toJson() {

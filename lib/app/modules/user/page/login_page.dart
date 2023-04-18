@@ -177,19 +177,4 @@ class LoginPage extends StatelessWidget {
       ),
     );
   }
-
-  // void openConfirmDialog(BuildContext context, String message, Function yesOnPressed, Function noOnPressed) {
-  //   final confirmDialog = AppConfirmDialog(
-  //     title: '¿Está seguro que desea cerrar sesión?',
-  //     yesOnPressed: () {
-  //       Navigator.pop(context);
-  //     },
-  //     noOnPressed: () {
-  //       Navigator.pop(context);
-  //     },
-  //     yes: 'Aceptar',
-  //     no: 'Cancelar',
-  //   );
-  //   showDialog(barrierColor: Colors.red, barrierDismissible: false, context: context, builder: (BuildContext context) => confirmDialog);
-  // }
 }

@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable, lines_longer_than_80_chars, unnecessary_lambdas, cascade_invocations
 
 import 'package:emerson/app/common/navigation_app/app_tab_bar.dart';
+import 'package:emerson/app/modules/anged/page/anged_page.dart';
 import 'package:emerson/app/modules/duoling_page.dart';
 import 'package:emerson/app/modules/movie/page/movie_page.dart';
 import 'package:emerson/app/modules/user/page/profile_page.dart';
@@ -29,6 +30,7 @@ class NavigationPageState extends State<NavigationPage> {
     super.initState();
     screens.add(const DuolingoPage());
     screens.add(MoviePage.create(context));
+    screens.add(const AngedPage());
     screens.add(const ProfilePage());
   }
 
@@ -79,8 +81,12 @@ class NavigationPageState extends State<NavigationPage> {
               label: 'Películas',
             ),
             ItemTapBar(
+              iconData: Icons.play_arrow,
+              label: 'Ahorcado',
+            ),
+            ItemTapBar(
               iconData: Icons.person,
-              label: 'profile',
+              label: 'Perfil',
             ),
           ],
         ),
