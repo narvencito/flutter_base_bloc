@@ -1,8 +1,8 @@
 // ignore_for_file: lines_longer_than_80_chars, strict_raw_type, directives_ordering
 
 import 'package:emerson/app/modules/anged/page/anged_page.dart';
+import 'package:emerson/app/modules/duolingo/duolingo_page.dart';
 import 'package:flutter/material.dart';
-import 'package:emerson/app/modules/duoling_page.dart';
 import 'package:emerson/app/modules/home/page/home_page.dart';
 import 'package:emerson/app/modules/movie/model/movie_response_model2.dart';
 import 'package:emerson/app/modules/movie/page/movie_page.dart';

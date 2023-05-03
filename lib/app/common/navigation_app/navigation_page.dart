@@ -2,7 +2,7 @@
 
 import 'package:emerson/app/common/navigation_app/app_tab_bar.dart';
 import 'package:emerson/app/modules/anged/page/anged_page.dart';
-import 'package:emerson/app/modules/duoling_page.dart';
+import 'package:emerson/app/modules/duolingo/duolingo_page.dart';
 import 'package:emerson/app/modules/movie/page/movie_page.dart';
 import 'package:emerson/app/modules/user/page/profile_page.dart';
 import 'package:emerson/utils/constans.dart';

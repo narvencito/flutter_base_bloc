@@ -20,12 +20,13 @@ class MovieDetailPage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Stack(
-                    children: [
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.6,
-                        width: MediaQuery.of(context).size.width,
-                        child: AnimatedContainer(
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.53,
+                    width: MediaQuery.of(context).size.width,
+                    child: Stack(
+                      fit: StackFit.expand,
+                      children: [
+                        AnimatedContainer(
                           duration: const Duration(milliseconds: 100),
                           curve: Curves.easeInOut,
                           decoration: BoxDecoration(
@@ -39,20 +40,24 @@ class MovieDetailPage extends StatelessWidget {
                             ),
                           ),
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: IconButton(
-                          icon: const Icon(
-                            Icons.arrow_back_ios,
-                            color: ConstantsApp.primaryColor,
+                        Positioned(
+                          top: 0,
+                          left: 0,
+                          child: Padding(
+                            padding: const EdgeInsets.all(10),
+                            child: IconButton(
+                              icon: const Icon(
+                                Icons.arrow_back_ios,
+                                color: ConstantsApp.primaryColor,
+                              ),
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                            ),
                           ),
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                          },
-                        ),
-                      )
-                    ],
+                        )
+                      ],
+                    ),
                   ),
                   Expanded(
                     child: SingleChildScrollView(
