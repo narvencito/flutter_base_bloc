@@ -30,7 +30,7 @@ class NavigationPageState extends State<NavigationPage> {
     super.initState();
     screens.add(const DuolingoPage());
     screens.add(MoviePage.create(context));
-    screens.add(const AngedPage());
+    screens.add(AngedPage.create(context));
     screens.add(const ProfilePage());
   }
 

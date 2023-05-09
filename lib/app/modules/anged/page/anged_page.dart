@@ -1,12 +1,21 @@
 // ignore_for_file: lines_longer_than_80_chars
 
+import 'package:emerson/app/modules/anged/bloc/anged_bloc.dart';
 import 'package:emerson/app/modules/anged/model/anged_model.dart';
 import 'package:emerson/utils/constans.dart';
 import 'package:emerson/utils/methods.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AngedPage extends StatefulWidget {
   const AngedPage({super.key});
+
+  static Widget create(BuildContext context) {
+    return BlocProvider<AngedBloc>(
+      create: (_) => AngedBloc()..loadInitial(),
+      child: const AngedPage(),
+    );
+  }
 
   @override
   State<AngedPage> createState() => _AngedPageState();
@@ -108,161 +117,171 @@ class _AngedPageState extends State<AngedPage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.all(8),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      child: Scaffold(body: BlocBuilder<AngedBloc, AngedState>(
+        builder: (context, state) {
+          if (state is AngedDataInitialState) {
+            return Padding(
+              padding: const EdgeInsets.all(8),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    numErrors.toString(),
-                    style: const TextStyle(
-                      color: Colors.red,
-                      fontSize: 40,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                  Image.asset(
-                    imageAnged,
-                    scale: 2.5,
-                  ),
-                  Text(
-                    numAttempts.toString(),
-                    style: const TextStyle(
-                      color: Colors.green,
-                      fontSize: 40,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                ],
-              ),
-              const Spacer(),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 20),
-                child: Column(
-                  children: const [
-                    Padding(
-                      padding: EdgeInsets.only(bottom: 10),
-                      child: Text(
-                        'Informacion',
-                        style: TextStyle(
-                          color: Colors.black26,
-                          fontSize: 20,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        state.numErrors.toString(),
+                        style: const TextStyle(
+                          color: Colors.red,
+                          fontSize: 40,
                           fontWeight: FontWeight.w700,
                         ),
                       ),
-                    ),
-                    Text(
-                      'Framework front end',
-                      style: TextStyle(
-                        color: ConstantsApp.primaryColor,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w700,
+                      Image.asset(
+                        state.assetError,
+                        scale: 2.5,
                       ),
-                    ),
-                  ],
-                ),
-              ),
-
-              //view letters
-              wordSpace(),
-              //input and button
-
-              Container(
-                margin: const EdgeInsets.only(top: 40),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.83,
-                      height: 40,
-                      child: TextFormField(
-                        controller: controller,
-                        decoration: const InputDecoration(
-                          labelText: 'Ingrese la letra o palabra completa',
-                          border: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: ConstantsApp.primaryColor,
-                            ),
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(10),
+                      Text(
+                        state.numAttempts.toString(),
+                        style: const TextStyle(
+                          color: Colors.green,
+                          fontSize: 40,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const Spacer(),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 20),
+                    child: Column(
+                      children: const [
+                        Padding(
+                          padding: EdgeInsets.only(bottom: 10),
+                          child: Text(
+                            'Informacion',
+                            style: TextStyle(
+                              color: Colors.black26,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w700,
                             ),
                           ),
                         ),
-                      ),
-                    ),
-                    CircleAvatar(
-                      child: IconButton(
-                        onPressed: () {
-                          if (controller.text.isEmpty) {
-                            openConfirmDialog(
-                              context,
-                              'Ingrese una letra o una palabra',
-                              () {},
-                              () {},
-                            );
-                          }
-                          if (controller.text.length == 1) {
-                            // FocusScope.of(context).unfocus();
-                            selectedLetter = controller.text;
-                            controller.clear();
-                            searchLetter(selectedLetter);
-                            setState(() {});
-                          }
-
-                          if (controller.text.length > 1) {
-                            FocusScope.of(context).unfocus();
-                            if (controller.text.toUpperCase() == word.toUpperCase()) {
-                              indexWords++;
-                              resetValues();
-                              initWord();
-                              openConfirmDialog(
-                                context,
-                                'Palabra Encontrada',
-                                () {},
-                                () {},
-                              );
-                              setState(() {});
-                            } else {
-                              controller.clear();
-                              numAttempts--;
-                              numErrors++;
-                              imageAnged = 'assets/anged/$numErrors.png';
-                              setState(() {});
-                            }
-
-                            if (numErrors == maxNumErros) {
-                              indexWords++;
-                              resetValues();
-                              initWord();
-                              openConfirmDialog(
-                                context,
-                                messageError,
-                                () {},
-                                () {},
-                              );
-                              setState(() {});
-                            }
-                          }
-                        },
-                        icon: const Icon(
-                          Icons.check,
-                          color: Colors.white,
+                        Text(
+                          'Framework front end',
+                          style: TextStyle(
+                            color: ConstantsApp.primaryColor,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w700,
+                          ),
                         ),
-                      ),
-                    )
-                  ],
-                ),
-              ),
+                      ],
+                    ),
+                  ),
 
-              const Spacer()
-            ],
-          ),
-        ),
-      ),
+                  //view letters
+                  wordSpace(),
+                  //input and button
+
+                  Container(
+                    margin: const EdgeInsets.only(top: 40),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.83,
+                          height: 40,
+                          child: TextFormField(
+                            controller: controller,
+                            decoration: const InputDecoration(
+                              labelText: 'Ingrese la letra o palabra completa',
+                              border: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: ConstantsApp.primaryColor,
+                                ),
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(10),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        CircleAvatar(
+                          child: IconButton(
+                            onPressed: () {
+                              if (controller.text.isEmpty) {
+                                openConfirmDialog(
+                                  context,
+                                  'Ingrese una letra o una palabra',
+                                  () {},
+                                  () {},
+                                );
+                              }
+                              if (controller.text.length == 1) {
+                                // FocusScope.of(context).unfocus();
+                                selectedLetter = controller.text;
+                                controller.clear();
+                                searchLetter(selectedLetter);
+                                setState(() {});
+                              }
+
+                              if (controller.text.length > 1) {
+                                FocusScope.of(context).unfocus();
+                                if (controller.text.toUpperCase() == word.toUpperCase()) {
+                                  indexWords++;
+                                  resetValues();
+                                  initWord();
+                                  openConfirmDialog(
+                                    context,
+                                    'Palabra Encontrada',
+                                    () {},
+                                    () {},
+                                  );
+                                  setState(() {});
+                                } else {
+                                  controller.clear();
+                                  numAttempts--;
+                                  numErrors++;
+                                  imageAnged = 'assets/anged/$numErrors.png';
+                                  setState(() {});
+                                }
+
+                                if (numErrors == maxNumErros) {
+                                  indexWords++;
+                                  resetValues();
+                                  initWord();
+                                  openConfirmDialog(
+                                    context,
+                                    messageError,
+                                    () {},
+                                    () {},
+                                  );
+                                  setState(() {});
+                                }
+                              }
+                            },
+                            icon: const Icon(
+                              Icons.check,
+                              color: Colors.white,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+
+                  const Spacer()
+                ],
+              ),
+            );
+          }
+
+          if (state is AngedErrorState) {
+            return const Text("Error");
+          } else {
+            return Container();
+          }
+        },
+      )),
     );
   }
 

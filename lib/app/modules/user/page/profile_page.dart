@@ -17,13 +17,23 @@ class ProfilePage extends StatelessWidget {
             background: Stack(
               fit: StackFit.expand,
               children: [
-                Image.network(
-                  'https://blog.redbus.pe/wp-content/uploads/2022/08/Plaza-de-Armas-Huanta.jpg',
-                  fit: BoxFit.fill,
+                ClipRRect(
+                  borderRadius: const BorderRadius.only(
+                    bottomLeft: Radius.circular(30),
+                    bottomRight: Radius.circular(30),
+                  ),
+                  child: Image.asset(
+                    'assets/profile/huanta.jpg',
+                    fit: BoxFit.fill,
+                  ),
                 ),
                 Container(
                   decoration: BoxDecoration(
                     color: Colors.blue.withOpacity(0.4),
+                    borderRadius: const BorderRadius.only(
+                      bottomLeft: Radius.circular(30),
+                      bottomRight: Radius.circular(30),
+                    ),
                   ),
                 ),
                 Column(
@@ -69,9 +79,7 @@ class ProfilePage extends StatelessWidget {
                     ),
                     const CircleAvatar(
                       radius: 60,
-                      backgroundImage: NetworkImage(
-                        'https://lh3.googleusercontent.com/ae6j4Wfe7BamdodUTtXIiyUD8u3sLXQ3VUJQigeMiudzZDM7kIWPGAi0M4CC-F4P2Gw-ue5J3Stq8g-nv6z2Y8yexK5rOxvUnxLqeX-mP0ENPSMOcxe9FSLaN9dFCiOQQ6JNFBmDG0qECRReZnNzfHhklq9mlmhGxgDLNsLeMAjdYMUhSHtbqvK-KDOaXdfPJxzgaUcIm9Zrhe9fqEw2f-Y_0a8i40PRsYUkIiH35ITTRYdxqHxAzOrz4o-HD4FbI_Qs20WOv8SJ3_EWzJwqOYgkswEsXZi0HRjUX4zIkzlvC9ma7yrjmkL5s4r3_4fHyjQxC_KZnT_5WguFMz4p9c1tFLUhaEn77D8F4XhjVZuKBoSLdUa03cZYHmkttoDKM36DGKiRY2I5bEzBg8Wn71y-pDy_NZvrneMEbPFKJ6V4v-s2EOy90pDiK3ZbIAWedzJoXIO0JehRok1wM3G7BDlICIXI9Az4C7crBR5erNWUbAJZ6NCmv491jlU6ePEyyu28lniXTHVEeUwBIlz0478Q3al0YHd5qYhMcJOKhZGtL92nRMsqpdsTyexMldT-1lBGmuPDI7dj22StX2Gv9DV3HqjcGbEV_6y4T5fDEc3a8EEhHNhWSF_nAqqc5Db_pYfB9h_IhKOFbHh_YSaaObuYg-R7Nf0oluD-83pPf3vCMAAMg2M_HlmW4dawOggQaKzF3DS9e4TaDBKc1oos31x--x5ovNeKb4vgpfSpAg346vJPvjYsX1It_MGp-ZcjSIAXUEaAaxbiBrM9KLqtPYUkwIdkm3KUsSZ08wBz0vnLI4Tj5JxJ_3uIWtjpO1ySR0TMh7WrBEdjX0fY3XtpEJYNzgNoylHAcqpSpkXOuZX2ad2AGf9KHFp8_UfHEEq-vdyTd2E5J69jAaiKH1C8Ijk5547SPPcuhP6L09SUHRh72wm71-QKmc54nFuGVuVViAN_ScXyjEwhMipWsWSEuIYE-RTRUfr52ASBizY3eB5oyG7GzH_677o=w1247-h939-s-no?authuser=0',
-                      ),
+                      backgroundImage: AssetImage('assets/profile/photo.jpg'),
                     ),
                     const Text(
                       'Emerson Navarro',

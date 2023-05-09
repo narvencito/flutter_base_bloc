@@ -35,7 +35,9 @@ class MovieDetailPage extends StatelessWidget {
                               bottomRight: Radius.circular(30),
                             ),
                             image: DecorationImage(
-                              image: NetworkImage(InitFlavorConfig.imageUrl + movie.posterPath!),
+                              image: NetworkImage(
+                                InitFlavorConfig.imageUrl + movie.posterPath!,
+                              ),
                               fit: BoxFit.fill,
                             ),
                           ),

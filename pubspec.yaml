@@ -56,4 +56,8 @@ flutter:
   - assets/anged/2.png
   - assets/anged/3.png
   - assets/anged/4.png
+
+  #profile
+  - assets/profile/huanta.jpg
+  - assets/profile/photo.jpg
   
