@@ -5,7 +5,7 @@ import 'package:emerson/app/modules/anged/page/anged_page.dart';
 import 'package:emerson/app/modules/duolingo/duolingo_page.dart';
 import 'package:emerson/app/modules/movie/page/movie_page.dart';
 import 'package:emerson/app/modules/user/page/profile_page.dart';
-import 'package:emerson/utils/constans.dart';
+import 'package:emerson/app/utils/constans.dart';
 
 import 'package:flutter/material.dart';
 

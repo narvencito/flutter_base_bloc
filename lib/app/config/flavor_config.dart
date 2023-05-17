@@ -19,7 +19,7 @@ class InitFlavorConfig {
       case Flavor.DEV:
         return 'https://api.themoviedb.org/3/movie';
       case Flavor.PROD:
-        return '';
+        return 'https://api.themoviedb.org/3/movie';
     }
   }
 
@@ -28,7 +28,7 @@ class InitFlavorConfig {
       case Flavor.DEV:
         return 'https://image.tmdb.org/t/p/original';
       case Flavor.PROD:
-        return '';
+        return 'https://image.tmdb.org/t/p/original';
     }
   }
 
@@ -37,7 +37,7 @@ class InitFlavorConfig {
       case Flavor.DEV:
         return '5927f7059d649ac95ab1e3196f25ec1c';
       case Flavor.PROD:
-        return '';
+        return '5927f7059d649ac95ab1e3196f25ec1c';
     }
   }
 

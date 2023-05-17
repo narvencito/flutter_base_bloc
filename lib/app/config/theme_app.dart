@@ -1,9 +1,9 @@
 // ignore_for_file: directives_ordering
 
-import 'package:emerson/utils/methods.dart';
+import 'package:emerson/app/utils/methods.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:emerson/utils/constans.dart';
+import 'package:emerson/app/utils/constans.dart';
 
 class ThemeApp {
   final light = ThemeData(

@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_dynamic_calls, directives_ordering
 
 import 'package:flutter/material.dart';
-import 'package:emerson/utils/constans.dart';
+import 'package:emerson/app/utils/constans.dart';
 
 // ignore: must_be_immutable
 class AppConfirmDialog extends StatelessWidget {

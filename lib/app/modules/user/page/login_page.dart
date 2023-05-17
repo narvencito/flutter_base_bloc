@@ -6,7 +6,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:emerson/app/common/widgets/custom_painter.dart';
 import 'package:emerson/app/config/routes_app.dart';
 import 'package:emerson/app/modules/user/bloc/user_bloc.dart';
-import 'package:emerson/utils/constans.dart';
+import 'package:emerson/app/utils/constans.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});

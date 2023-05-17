@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_initializing_formals, use_key_in_widget_constructors, must_be_immutable, lines_longer_than_80_chars, cascade_invocations, strict_raw_type, directives_ordering
 import 'package:flutter/material.dart';
-import 'package:emerson/utils/constans.dart';
+import 'package:emerson/app/utils/constans.dart';
 
 const double _movement = 18;
 

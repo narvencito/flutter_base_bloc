@@ -9,7 +9,7 @@ import 'package:emerson/app/config/routes_app.dart';
 import 'package:emerson/app/modules/movie/bloc/movie_bloc.dart';
 import 'package:emerson/app/modules/movie/model/movie_response_model2.dart';
 // import 'package:emerson/app/modules/movie/widgets/dot_indicator.dart';
-import 'package:emerson/utils/constans.dart';
+import 'package:emerson/app/utils/constans.dart';
 
 class MoviePage extends StatefulWidget {
   const MoviePage({super.key});

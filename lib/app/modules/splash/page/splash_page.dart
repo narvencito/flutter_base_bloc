@@ -3,7 +3,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:emerson/app/config/routes_app.dart';
-import 'package:emerson/utils/constans.dart';
+import 'package:emerson/app/utils/constans.dart';
 // import 'package:emerson/utils/constans.dart';
 
 class SplashPage extends StatefulWidget {

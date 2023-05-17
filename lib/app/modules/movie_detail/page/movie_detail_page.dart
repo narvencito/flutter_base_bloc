@@ -1,6 +1,6 @@
 // ignore_for_file: must_be_immutable, lines_longer_than_80_chars, directives_ordering
 
-import 'package:emerson/utils/constans.dart';
+import 'package:emerson/app/utils/constans.dart';
 import 'package:flutter/material.dart';
 import 'package:emerson/app/config/flavor_config.dart';
 import 'package:emerson/app/modules/movie/model/movie_response_model2.dart';
